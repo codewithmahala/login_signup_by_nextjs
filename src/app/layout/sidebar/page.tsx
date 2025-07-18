@@ -2,14 +2,34 @@
 
 import React, { useState } from "react";
 import "../../../../styles/backend/layout/sidebar.css";
+import Link from "next/link";
+import { useRouter } from "next/navigation"; // ✅ correct
+import toast from "react-hot-toast";
+import axios from "axios";
 
 export default function Sidebar() {
+    const router = useRouter();
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
     const handleDropdown = (menu: string) => {
         setOpenDropdown(openDropdown === menu ? null : menu);
     };
 
+    const handleLogout  = async () =>{
+        try {
+            await axios.get("/api/users/logout");
+            toast.success("Logout successful!");
+            router.push("/login");
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+            console.error("Axios error:", error.response?.data || error.message);
+            } else {
+            console.error("Unexpected error:", error);
+            }
+            console.error("Logout failed:", error);
+            
+        }
+    }
     return (
         <aside className="sidebar">
             <div className="sidebar-logo">
@@ -19,7 +39,7 @@ export default function Sidebar() {
             <nav className="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="/dashboard" className="sidebar-link">🏠 Dashboard</a>
+                        <Link href="/dashboard" className="sidebar-link">🏠 Dashboard</Link>
                     </li>
                     <li>
                         <button
@@ -31,21 +51,21 @@ export default function Sidebar() {
                         {openDropdown === "account" && (
                             <ul className="sidebar-dropdown-list">
                                 <li>
-                                    <a href="/profile" className="sidebar-dropdown-link">Profile</a>
+                                    <Link href="/profile" className="sidebar-dropdown-link">Profile</Link>
                                 </li>
                                 <li>
-                                    <a href="/settings" className="sidebar-dropdown-link">Settings</a>
+                                    <Link href="/settings" className="sidebar-dropdown-link">Settings</Link>
                                 </li>
                             </ul>
                         )}
                     </li>
                     <li>
-                        <a href="/support" className="sidebar-link">💬 Support</a>
+                        <Link href="/support" className="sidebar-link">💬 Support</Link>
                     </li>
                 </ul>
             </nav>
             <div>
-                <button className="sidebar-logout" onClick={() => alert("Logging out...")}>
+                <button className="sidebar-logout" onClick={handleLogout}>
                     Logout
                 </button>
             </div>

@@ -20,7 +20,10 @@
     align-items: center;
     justify-content: space-between;
   }
-  
+  .header-logout{
+    cursor: pointer;
+    color: #333;
+  }
   @media (max-width: 900px) {
     .main-header {
       left: 0;
