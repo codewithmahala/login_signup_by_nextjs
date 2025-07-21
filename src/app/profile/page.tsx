@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import Layout from "../layout/app/page";
 import "../../../styles/backend/profile/profile.css";
 
@@ -14,6 +14,36 @@ export default function ProfilePage() {
         city: "",
     });
 
+    useEffect(() => {
+       const fetchProfile = async ()=> {
+        try {
+            const res = await fetch('/api/users/profile',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            const data = await res.json();
+            if (data?.data) {
+                const user = data.data;
+                setFormData({
+                    name: user.name || "",
+                    email: user.email || "",
+                    phone: user.phone || "",
+                    address: user.address || "",
+                    pin: user.pin || "",
+                    state: user.state || "",
+                    city: user.city || "",
+                });
+            }
+            
+        } catch (error) {
+            console.error("Error fetching profile data:", error);
+            
+        }
+       }
+       fetchProfile();
+    }, [])
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -22,10 +52,31 @@ export default function ProfilePage() {
         }));
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("Profile Data:", formData);
+    
+        try {
+            const res = await fetch('/api/users/profile', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            const result = await res.json();
+    
+            if (result.success) {
+                alert("Profile updated successfully");
+            } else {
+                alert("Update failed: " + result.message);
+            }
+        } catch (error) {
+            console.error("Error updating profile:", error);
+            alert("Something went wrong");
+        }
     };
+    
 
     return (
         <Layout>
