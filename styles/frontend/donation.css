@@ -1,0 +1,245 @@
+.donation-button-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    animation: pulse 2s infinite;
+}
+
+.donation-button-fixed button {
+    background-color: var(--primary-color);
+    color: #ffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.donation-button-fixed button:hover {
+    /* background-color: #e6af00; */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.donation-button-fixed i {
+    font-size: 18px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1998;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Donation Modal */
+.donation-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    min-width: auto;
+    width: 46%;
+    max-width: 900px;
+    max-height: 100vh;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1999;
+    display: none;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.donation-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.modal-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.donation-modal-content {
+    padding: 8px 24px 8px 24px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.donation-header {
+    text-align: center;
+}
+
+.modal-logo {
+    width: 80px;
+}
+
+
+
+
+/* 
+.container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    overflow: hidden;
+    padding: 15px;
+    border: 2px solid #006600;
+} */
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #006600;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    background: #eee;
+    /* font-weight: bold; */
+    color: black;
+    border-radius: 7px;
+
+    /* border-right: 1px solid #006600; */
+}
+
+.tab:last-child {
+    border-right: none;
+}
+
+.tab.active {
+    background: #006600;
+    border-bottom: 3px solid #006600;
+    color: whitesmoke;
+    border-radius: 7px;
+}
+
+.content {
+    padding: 20px 0 0 0;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    /* font-weight: bold; */
+    margin-bottom: 5px;
+    color: black;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #006600;
+    border-radius: 5px;
+    background-color: #f4eaea;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: 1px solid grey;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    background: #006600;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: #004d00;
+}
+
+.button {
+    width: 50%;
+    padding: 10px;
+    background: #006600;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    /* position: absolute;
+    left: 30%; */
+}
+
+
+
+hr {
+    border: none;
+    height: 2px;
+    background: #006600;
+    margin: 15px 0;
+}
+
+.qr-content {
+    text-align: center;
+    /* display: none; */
+}
+
+.qr-content img {
+    width: 200px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    color: black;
+}
