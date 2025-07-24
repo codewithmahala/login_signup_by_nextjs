@@ -1,6 +1,6 @@
 'use client';
 
-import "../../../styles/backend/auth/signup.css";
+import "../../../../styles/backend/auth/signup.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
@@ -73,7 +73,7 @@ export default function SignupPage() {
                     </button>
                 </form>
                 <div className="signup-footer">
-                    Already have an account? <Link href="/login">Login</Link>
+                    Already have an account? <Link href="/admin/login">Login</Link>
                 </div>
             </div>
         </div>

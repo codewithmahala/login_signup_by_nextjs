@@ -1,5 +1,5 @@
 import Layout from "../layout/app/page";
-import "../../../styles/backend/dashboard/index.css";
+import "../../../../styles/backend/dashboard/index.css";
 
 export default function DashboardPage() {
     return (

@@ -2,7 +2,7 @@
 
 import FrontendLayout from "../layout/app/page";
 import FooterWaves from '../layout/footerwave/page';
-import "../../../../styles/frontend/about.css";
+import "../../../styles/frontend/about.css";
 export default function AboutUs() {
   return (
     <FrontendLayout>

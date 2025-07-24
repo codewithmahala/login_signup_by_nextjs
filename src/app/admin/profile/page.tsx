@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import Layout from "../layout/app/page";
-import "../../../styles/backend/profile/profile.css";
+import "../../../../styles/backend/profile/profile.css";
 
 export default function ProfilePage() {
     const [formData, setFormData] = useState({

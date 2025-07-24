@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.start-section {
+    margin-top: 5rem;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Header Styles */
+
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .logo {
+   height: 60px;
+   animation: pulse 2s infinite;
+} */
+
+.logo-text {
+    font-size: 12px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav a i {
+    margin-left: 5px;
+    font-size: 10px;
+}
+
+.main-nav a:hover {
+    color: #ffc107;
+}
+
+.donate-btn a {
+    background-color: #ffc107;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.donate-btn a:hover {
+    background-color: #e6af00;
+    transform: translateY(-2px);
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Banner Section */
+.banner {
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banner-bg.jpg'); */
+    background: url('/assets/images/contactus.png');
+
+    background-size: cover;
+    background-position: bottom;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.banner h1 {
+    font-size: 42px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Contact Info Section */
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 5%;
+    flex-wrap: wrap;
+    gap: 20px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.contact-card {
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    animation: fadeIn 1.4s ease-out;
+
+}
+
+.icon-container {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    transition: all 0.3s;
+}
+
+.contact-card:nth-child(1) .icon-container {
+    color: #dc3545;
+}
+
+.contact-card:nth-child(2) .icon-container {
+    color: #ffc107;
+}
+
+.contact-card:nth-child(3) .icon-container {
+    color: #28a745;
+}
+
+.icon-container i {
+    font-size: 24px;
+}
+
+.contact-card:hover .icon-container {
+    transform: translateY(-5px);
+}
+
+.contact-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Map and Form Section */
+.map-form-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 30px;
+}
+
+.map-container {
+    flex: 1;
+    min-width: 300px;
+    height: 498px;
+    border-radius: 8px;
+    overflow: hidden;
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+    animation: slideInLeft 1.5s ease-out;
+}
+
+.form-container {
+    flex: 1;
+    /* min-width: 500px; */
+    animation: slideInRight 1.5s ease-out;
+}
+
+.form-container h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-container p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.form-group-contact {
+    margin-bottom: 15px;
+}
+
+.form-group-contact input,
+.form-group-contact textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group-contact input:focus,
+.form-group-contact textarea:focus {
+    border-color: #ffc107;
+    outline: none;
+}
+
+.send-btn {
+    background-color: var(--primary-color);
+    color: #ffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.send-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Bank Details Section */
+.bank-details {
+    background-color: #fff9e6;
+    padding: 60px 5%;
+    text-align: center;
+    animation: fadeIn 1.6s ease-out;
+}
+
+.bank-details h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.bank-details>p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.bank-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.bank-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    text-align: left;
+    max-width: 450px;
+    flex: 1;
+    min-width: 300px;
+    animation: fadeIn 1.8s ease-out;
+}
+
+.bank-icon {
+    font-size: 40px;
+    color: #ddd;
+    margin-right: 20px;
+}
+
+.bank-info h3 {
+    color: #dc3545;
+    margin: 5px 0 15px;
+}
+
+.bank-info p {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.bank-info p strong {
+    color: #333;
+}
+
+.qr-code {
+    margin-left: 20px;
+}
+
+.qr-code img {
+    width: 100px;
+    height: 100px;
+}
+
+.tax-note {
+    font-style: italic;
+    color: #666;
+}
+
+
+
+/* Contact Us Fixed Button */
+.contact-us-fixed {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+.contact-us-fixed a {
+    display: block;
+    background-color: #ffc107;
+    color: #333;
+    padding: 15px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: bold;
+    border-radius: 5px 0 0 5px;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.contact-us-fixed a:hover {
+    background-color: #e6af00;
+    padding-bottom: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-nav ul {
+        gap: 10px;
+    }
+
+    .main-nav a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 3%;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .map-form-container {
+        flex-direction: column;
+    }
+
+    .map-container,
+    .form-container {
+        width: 100%;
+    }
+
+    .bank-card {
+        flex-direction: column;
+    }
+
+    .bank-icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .qr-code {
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 40px;
+    }
+
+    .donate-btn a {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .banner {
+        height: 150px;
+    }
+
+    .banner h1 {
+        font-size: 32px;
+    }
+
+    .contact-us-fixed {
+        display: none;
+    }
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2000;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.mobile-menu ul {
+    margin-top: 60px;
+}
+
+.mobile-menu ul li {
+    margin-bottom: 15px;
+}
+
+.mobile-menu a {
+    color: #333;
+    font-size: 18px;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+
+.letsconnect {
+    position: relative;
+    display: inline-block;
+    /* Ensures the border is only as wide as the text */
+    padding-bottom: 5px;
+    /* Adds spacing */
+    color: black !important;
+}
+
+.letsconnect::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 66%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.contactaddress {
+    margin-top: 2rem;
+}
+
+.sign,
+.fa-3x {
+    color: #578726;
+    font-size: 2em !important;
+}
+
+.newrow {
+    margin-top: 1rem;
+}

@@ -1,7 +1,7 @@
 'use client';
 
 import React from "react";
-import "../../../../styles/backend/layout/header.css";
+import "../../../../../styles/backend/layout/header.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
@@ -13,7 +13,7 @@ export default function Header() {
         try {
             await axios.get("/api/users/logout");
             toast.success("Logout successful!");
-            router.push("/login");
+            router.push("/admin/login");
         } catch (error: unknown) {
             if (error instanceof Error) {
                 console.error("Logout failed:", error.message);
@@ -27,7 +27,7 @@ export default function Header() {
         <header className="main-header">
             <div className="header-container">
                 <div className="header-logo">
-                    <Link href="/dashboard">
+                    <Link href="/admin/dashboard">
                         <span style={{ color: "#2575fc", fontWeight: 700 }}>My</span>
                         <span style={{ color: "#6a11cb", fontWeight: 700 }}>App</span>
                     </Link>

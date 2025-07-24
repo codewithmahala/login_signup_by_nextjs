@@ -1,7 +1,7 @@
 import Header from "../header/page";
 import Sidebar from "../sidebar/page";
-import "../../../../styles/backend/layout/header.css";
-import "../../../../styles/backend/layout/sidebar.css";
+import "../../../../../styles/backend/layout/header.css";
+import "../../../../../styles/backend/layout/sidebar.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (

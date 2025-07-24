@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
-import "../../../../styles/backend/layout/sidebar.css";
+import "../../../../../styles/backend/layout/sidebar.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation"; // ✅ correct
 import toast from "react-hot-toast";
@@ -19,7 +19,7 @@ export default function Sidebar() {
         try {
             await axios.get("/api/users/logout");
             toast.success("Logout successful!");
-            router.push("/login");
+            router.push("/admin/login");
         } catch (error) {
             if (axios.isAxiosError(error)) {
             console.error("Axios error:", error.response?.data || error.message);
@@ -39,7 +39,7 @@ export default function Sidebar() {
             <nav className="sidebar-nav">
                 <ul>
                     <li>
-                        <Link href="/dashboard" className="sidebar-link">🏠 Dashboard</Link>
+                        <Link href="/admin/dashboard" className="sidebar-link">🏠 Dashboard</Link>
                     </li>
                     <li>
                         <button
@@ -51,10 +51,10 @@ export default function Sidebar() {
                         {openDropdown === "account" && (
                             <ul className="sidebar-dropdown-list">
                                 <li>
-                                    <Link href="/profile" className="sidebar-dropdown-link">Profile</Link>
+                                    <Link href="/admin/profile" className="sidebar-dropdown-link">Profile</Link>
                                 </li>
                                 <li>
-                                    <Link href="/settings" className="sidebar-dropdown-link">Settings</Link>
+                                    <Link href="/admin/settings" className="sidebar-dropdown-link">Settings</Link>
                                 </li>
                             </ul>
                         )}

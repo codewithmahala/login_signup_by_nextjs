@@ -1,6 +1,6 @@
 'use client';
 
-import "../../../styles/backend/auth/login.css";
+import "../../../../styles/backend/auth/login.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
@@ -20,7 +20,7 @@ export default function LoginPage() {
             const response = await axios.post("/api/users/login", user);
             if (response.data.success) {
                 toast.success("Login successful!");
-                router.push("/dashboard");
+                router.push("/admin/dashboard");
             } else {
                 toast.error(response.data.error || "Login failed. Please try again.");
             }
@@ -73,7 +73,7 @@ export default function LoginPage() {
                     </button>
                 </form>
                 <div className="login-footer">
-                    Don&apos;t have an account? <Link href="/signup">Sign Up</Link>
+                    Don&apos;t have an account? <Link href="/admin/signup">Sign Up</Link>
                 </div>
             </div>
         </div>
